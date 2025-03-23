@@ -78,8 +78,8 @@ y_bins = st.number_input(
     step=1
 )
 
-x_bins = pd.cut(datapts['x'], bins=x_bins, right=False)
-y_bins = pd.cut(datapts['y'], bins=y_bins, right=False)
+x_bins=int(x_bins)
+y_bins=int(y_bins)
 
 max_x=max(datapts["x"])
 min_x=min(datapts["x"])
@@ -95,11 +95,44 @@ def nearest_mag(width):
     first_nonzero_pos=0
     for i in range(len(width_str)):
         if width_str[i]!="0" and width_str[i]!=".":
-        break
+            break
         i+=1
-    first_nonzero_mag=width_str.index(".") - first_nonzero_pos
-    while 
+    start=int(width_str.index(".") - first_nonzero_pos)
+    while width+10**start>2*width:
+        start-=1
+    return 10**start
 
+max_x=(int(max_x//(nearest_mag(invlwidth_x))) + 1)*nearest_mag(invlwidth_x)
+min_x=(int(min_x//(nearest_mag(invlwidth_x))) - 1)*nearest_mag(invlwidth_x)
+
+invlwidth_x=(max_x-min_x)/x_bins
+invlwidth_y=(max_y-min_y)/x_bins
+
+bds_x=[min_x+i*invlwidth_x for i in range(x_bins)]
+bds_x.append(max_x)
+bds_y=[max_x+i*invlwidth_y for i in range(x_bins)]
+bds_y.append(max_y)
+
+subinvls_x=[]
+subinvls_y=[]
+
+for i in range(len(bds_x[:-1])):
+    subinvls_x.append(f"[{try_int(bds_x[i])},{try_int(bds_x[i+1])})")
+for i in range(len(bds_y[:-1])):
+    subinvls_y.append(f"[{try_int(bds_y[i])},{try_int(bds_y[i+1])})")
+
+matrix=np.zeros((x_bins,y_bins))
+data=datapts.to_numpy()
+for pt in data:
+    for i in range(x_bins):
+        for j in range(y_bins):
+            if (bds_x[i]<=pt[0]) and (pt[0]<bds_x[i+1]) and ((bds_y[j]<=pt[1])) and (pt[1]<bds_y[j+1]):
+                matrix[i][j]+=1
+                break
+
+df=pd.DataFrame(matrix,columns=subinvls_y,index=subinvls_x)
+
+nearest_mag(0.009567)
 while 
 max_x=invlwidth_x
 

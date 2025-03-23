@@ -63,7 +63,7 @@ st.markdown("You have entered the following coordinates:")
 st.dataframe(datapts,hide_index=True)
 
 x_bins = st.number_input(
-    "Select the number of subintervals for the $x$-variable (recommended value: 5):",
+    "Select the number of subintervals for the x-variable (recommended value: 5):",
     min_value=1,
     max_value=100,
     value=5,
@@ -71,7 +71,7 @@ x_bins = st.number_input(
 )
 
 y_bins = st.number_input(
-    "Select the number of subintervals for the $y$-variable (recommended value: 5)",
+    "Select the number of subintervals for the y-variable (recommended value: 5)",
     min_value=1,
     max_value=100,
     value=5,
@@ -81,8 +81,46 @@ y_bins = st.number_input(
 x_bins = pd.cut(datapts['x'], bins=x_bins, right=False)
 y_bins = pd.cut(datapts['y'], bins=y_bins, right=False)
 
+max_x=max(datapts["x"])
+min_x=min(datapts["x"])
+
+max_y=max(datapts["y"])
+min_y=min(datapts["y"])
+
+invlwidth_x=(max_x-min_x)/x_bins
+invlwidth_y=(max_y-min_y)/x_bins
+
+def nearest_mag(width):
+    width_str=str(width)
+    first_nonzero_pos=0
+    for i in range(len(width_str)):
+        if width_str[i]!="0" and width_str[i]!=".":
+        break
+        i+=1
+    first_nonzero_mag=width_str.index(".") - first_nonzero_pos
+    while 
+
+while 
+max_x=invlwidth_x
+
+def correction(vals,n):
+    min=min(vals)
+    max=max(vals)
+
+    vals_str=[str(val) for val in vals]
+    pos_py=len(min([len(val) for val in vals_str])) - 1
+    for i in range(len(min([len(val) for val in vals_str]))):
+        if all([vals_str[0][i]==vals_str[j] for j in range(len(vals_str))])!=True:
+            pos_py=i
+            break
+    pos=
+
+    
+
+
 conttable=pd.crosstab(x_bins,y_bins)
 
+st.text("")
 st.markdown("##### Contingency table: ")
 
 st.dataframe(pd.DataFrame(conttable))

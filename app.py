@@ -140,13 +140,14 @@ for pt in data:
                 matrix[i][j]+=1
                 break
 
-df=pd.DataFrame(matrix,columns=subinvls_y,index=subinvls_x) 
+df=pd.DataFrame(matrix,columns=subinvls_y) #,index=subinvls_x
+df=pd.concat([subinvls_x,df],axis=1)
 
 
 st.text("")
 st.markdown("##### Contingency table: ")
 
-st.dataframe(df)
+st.dataframe(df,hide_index=True)
 
 
 

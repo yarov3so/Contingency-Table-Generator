@@ -131,7 +131,7 @@ for pt in data:
                 matrix[i][j]+=1
                 break
 
-df=pd.DataFrame(matrix,columns=subinvls_y,index=subinvls_x)
+df=pd.DataFrame(matrix) #,columns=subinvls_y,index=subinvls_x
 
 
 st.text("")

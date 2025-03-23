@@ -141,7 +141,7 @@ for pt in data:
                 break
 
 df=pd.DataFrame(matrix,columns=subinvls_y) #,index=subinvls_x
-df=pd.concat([subinvls_x,df],axis=1)
+df=pd.concat([pd.Series(subinvls_x),df],axis=1)
 
 
 st.text("")

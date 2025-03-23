@@ -142,7 +142,7 @@ for pt in data:
 
 df=pd.DataFrame(matrix,columns=subinvls_y) #,index=subinvls_x
 df=pd.concat([pd.Series(subinvls_x),df],axis=1)
-df.rename(columns={0:"x \u2193   ,   y \u2192"},inplace=True)
+df.rename(columns={0:"x \u2193  ,   y \u2192"},inplace=True)
 
 
 st.text("")

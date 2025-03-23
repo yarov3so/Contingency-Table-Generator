@@ -112,12 +112,15 @@ def nearest_mag(width):
 max_x=(int(max_x//(nearest_mag(invlwidth_x))) + 1)*nearest_mag(invlwidth_x)
 min_x=(int(min_x//(nearest_mag(invlwidth_x))) - 1)*nearest_mag(invlwidth_x)
 
+max_y=(int(max_y//(nearest_mag(invlwidth_y))) + 1)*nearest_mag(invlwidth_y)
+min_y=(int(min_y//(nearest_mag(invlwidth_y))) - 1)*nearest_mag(invlwidth_y)
+
 invlwidth_x=(max_x-min_x)/x_bins
-invlwidth_y=(max_y-min_y)/x_bins
+invlwidth_y=(max_y-min_y)/y_bins
 
 bds_x=[min_x+i*invlwidth_x for i in range(x_bins)]
 bds_x.append(max_x)
-bds_y=[max_x+i*invlwidth_y for i in range(x_bins)]
+bds_y=[min_y+i*invlwidth_y for i in range(y_bins)]
 bds_y.append(max_y)
 
 subinvls_x=[]

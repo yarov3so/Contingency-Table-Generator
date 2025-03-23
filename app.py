@@ -132,31 +132,11 @@ for pt in data:
 
 df=pd.DataFrame(matrix,columns=subinvls_y,index=subinvls_x)
 
-nearest_mag(0.009567)
-while 
-max_x=invlwidth_x
-
-def correction(vals,n):
-    min=min(vals)
-    max=max(vals)
-
-    vals_str=[str(val) for val in vals]
-    pos_py=len(min([len(val) for val in vals_str])) - 1
-    for i in range(len(min([len(val) for val in vals_str]))):
-        if all([vals_str[0][i]==vals_str[j] for j in range(len(vals_str))])!=True:
-            pos_py=i
-            break
-    pos=
-
-    
-
-
-conttable=pd.crosstab(x_bins,y_bins)
 
 st.text("")
 st.markdown("##### Contingency table: ")
 
-st.dataframe(pd.DataFrame(conttable))
+st.dataframe(df)
 
 
 

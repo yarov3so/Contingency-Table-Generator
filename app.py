@@ -80,7 +80,7 @@ st.dataframe(datapts,hide_index=True)
 # )
 
 x_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5",key="x_bins")
-y_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5",key="y_bins")
+y_bins=st.text_input("Select the number of subintervals for the y-variable (recommended value: 5)",value="5",key="y_bins")
 
 if x_bins=="" or y_bins=="":
     st.stop()
@@ -95,7 +95,7 @@ max_y=max(datapts["y"])
 min_y=min(datapts["y"])
 
 invlwidth_x=(max_x-min_x)/x_bins
-invlwidth_y=(max_y-min_y)/x_bins
+invlwidth_y=(max_y-min_y)/y_bins
 
 def nearest_mag(width):
     width_str=str(width)

@@ -63,21 +63,27 @@ n=len(datapts)
 st.markdown("You have entered the following coordinates:")
 st.dataframe(datapts,hide_index=True)
 
-x_bins = st.number_input(
-    "Select the number of subintervals for the x-variable (recommended value: 5):",
-    min_value=1,
-    max_value=100,
-    value=5,
-    step=1
-)
+# x_bins = st.number_input(
+#     "Select the number of subintervals for the x-variable (recommended value: 5):",
+#     min_value=1,
+#     max_value=100,
+#     value=5,
+#     step=1
+# )
 
-y_bins = st.number_input(
-    "Select the number of subintervals for the y-variable (recommended value: 5)",
-    min_value=1,
-    max_value=100,
-    value=5,
-    step=1
-)
+# y_bins = st.number_input(
+#     "Select the number of subintervals for the y-variable (recommended value: 5)",
+#     min_value=1,
+#     max_value=100,
+#     value=5,
+#     step=1
+# )
+
+x_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5")
+y_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5")
+
+if x_bins=="" or y_bins=="":
+    st.stop()
 
 x_bins=int(x_bins)
 y_bins=int(y_bins)

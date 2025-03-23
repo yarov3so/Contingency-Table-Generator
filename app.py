@@ -150,5 +150,11 @@ st.markdown("##### Contingency table: ")
 
 st.dataframe(df,hide_index=True)
 
+st.text("")
+st.markdown("""*Crafted by yarov3so*   
+<a href="https://www.buymeacoffee.com/yarov3so" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 9em; height: auto; padding-top: 0.7em; padding-bottom: 1em" ></a>  
+See my other [Math Help Tools](https://mathh3lptools.streamlit.app)""",unsafe_allow_html=True)
+
+
 
 

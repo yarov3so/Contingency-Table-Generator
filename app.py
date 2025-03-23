@@ -79,8 +79,8 @@ st.dataframe(datapts,hide_index=True)
 #     step=1
 # )
 
-x_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5")
-y_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5")
+x_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5",key="x_bins")
+y_bins=st.text_input("Select the number of subintervals for the x-variable (recommended value: 5)",value="5",key="y_bins")
 
 if x_bins=="" or y_bins=="":
     st.stop()

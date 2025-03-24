@@ -175,7 +175,7 @@ if corr<=0.4 and corr>0.1:
     st.markdown(f"The correlation is positive and weak: &nbsp; ${corr}$")
 if corr<=0.1 and corr>=-0.1:
     st.markdown(f"There is effectively zero: &nbsp; ${corr}$")
-if corr=>-0.4 and corr<-0.1:
+if corr>=-0.4 and corr<-0.1:
     st.markdown(f"The correlation is negative and weak: &nbsp; ${corr}$")
 if corr>-0.6 and corr<-0.4:
     st.markdown(f"The correlation is negative and moderate: &nbsp; ${corr}$")

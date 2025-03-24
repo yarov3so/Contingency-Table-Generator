@@ -168,19 +168,19 @@ st.dataframe(df,hide_index=True)
 
 corr = datapts['x'].corr(datapts['y'])
 if corr>=0.6:
-    st.markdown(f"The correlation is positive and strong: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is positive and strong: &nbsp; ${corr}$")
 if corr<0.6 and corr>0.4:
-    st.markdown(f"The correlation is positive and moderate: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is positive and moderate: &nbsp; ${corr}$")
 if corr<=0.4 and corr>0.1:
-    st.markdown(f"The correlation is positive and weak: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is positive and weak: &nbsp; ${corr}$")
 if corr<=0.1 and corr>=-0.1:
-    st.markdown(f"There is effectively zero: &nbsp; {${corr}$}")
+    st.markdown(f"There is effectively zero: &nbsp; ${corr}$")
 if corr=>-0.4 and corr<-0.1:
-    st.markdown(f"The correlation is negative and weak: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is negative and weak: &nbsp; ${corr}$")
 if corr>-0.6 and corr<-0.4:
-    st.markdown(f"The correlation is negative and moderate: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is negative and moderate: &nbsp; ${corr}$")
 if corr<=-0.6:
-    st.markdown(f"The correlation is negative and strong: &nbsp; {${corr}$}")
+    st.markdown(f"The correlation is negative and strong: &nbsp; ${corr}$")
 
 st.text("")
 st.markdown("""*Crafted by yarov3so*   

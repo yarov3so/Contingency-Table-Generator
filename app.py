@@ -49,12 +49,12 @@ while True:
     try:
         datapts.loc[len(datapts)]=comprehend(entries[i])
     except:
-        st.markdown("Cannot parse your entry! Did you make a typo?")
+        st.warning("Cannot parse your entry! Did you make a typo?")
         st.stop()
     i+=1
 
 if len(datapts)==0 or (i==0 and "," not in entries[0]) or (i==0 and entries[0] == ",") :
-    st.markdown("You have entered no data points!")
+    st.warning("You have entered no data points!")
     st.stop()
 
 datapts=datapts.sort_values(by="x")
@@ -72,7 +72,7 @@ x_bins = st.number_input(
 )
 
 y_bins = st.number_input(
-    "Select the number of subintervals for the y-variable (recommended value: 5)",
+    "Select the number of subintervals for the y-variable (recommended value: 5):",
     min_value=1,
     max_value=100,
     value=5,

@@ -170,26 +170,26 @@ corr = datapts['x'].corr(datapts['y'])
 
 try:
     if corr!=try_int(corr):
-        corr_mod="\approx"+str(try_int(corr))
+        corr_mod=" \\approx "+str(try_int(corr))
     else:
         corr_mod=try_int(corr)
 except:
     corr_mod=try_int(corr)
         
 if corr>=0.6:
-    st.markdown(f"The correlation is positive and strong: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **positive** and **strong** : &nbsp; ${corr_mod}$")
 if corr<0.6 and corr>0.4:
-    st.markdown(f"The correlation is positive and moderate: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **positive** and **moderate** : &nbsp; ${corr_mod}$")
 if corr<=0.4 and corr>0.1:
-    st.markdown(f"The correlation is positive and weak: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **positive** and **weak** : &nbsp; ${corr_mod}$")
 if corr<=0.1 and corr>=-0.1:
-    st.markdown(f"There is effectively zero: &nbsp; ${corr_mod}$")
+    st.markdown(f"There is effectively **zero** : &nbsp; ${corr_mod}$")
 if corr>=-0.4 and corr<-0.1:
-    st.markdown(f"The correlation is negative and weak: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **negative** and **weak** : &nbsp; ${corr_mod}$")
 if corr>-0.6 and corr<-0.4:
-    st.markdown(f"The correlation is negative and moderate: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **negative** and **moderate** : &nbsp; ${corr_mod}$")
 if corr<=-0.6:
-    st.markdown(f"The correlation is negative and strong: &nbsp; ${corr_mod}$")
+    st.markdown(f"The correlation is **negative** and **strong** : &nbsp; ${corr_mod}$")
 
 st.text("")
 st.markdown("""*Crafted by yarov3so*   

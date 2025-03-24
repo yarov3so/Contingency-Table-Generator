@@ -170,7 +170,7 @@ corr = datapts['x'].corr(datapts['y'])
 
 try:
     if corr!=try_int(corr):
-        corr_mod=" \\approx "+str(try_int(corr))
+        corr_mod=" \\approx"+str(try_int(corr))
     else:
         corr_mod=try_int(corr)
 except:

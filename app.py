@@ -35,7 +35,7 @@ current_entry={0}
 
 st.title("Contingency Table Generator")
 st.markdown("Produces a contingency table for a set of data points.")
-st.markdown("*The independant variable, labelled by "x", goes on the left, whereas the dependant variable, labelled by "y", goes on the right.*")
+st.markdown("""*The independant variable, labelled by "x", goes on the left, whereas the dependant variable, labelled by "y", goes on the right.*""")
 
 entries={}
 i=0

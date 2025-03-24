@@ -3,6 +3,10 @@ import numpy as np
 import re
 import streamlit as st
 
+st.set_page_config(
+    page_title="Contingency Table Generator",
+    page_icon="MHT.png", 
+)
 
 def comprehend(mystring):
     mystring=mystring.replace(" ", "")

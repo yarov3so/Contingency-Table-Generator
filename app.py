@@ -48,6 +48,9 @@ while True:
         break
     try:
         datapts.loc[len(datapts)]=comprehend(entries[i])
+        if "," not in entries[i]:
+            st.warning("You have only entered one coordinate!")
+            st.stop()
     except:
         st.warning("Cannot parse your entry! Did you make a typo?")
         st.stop()

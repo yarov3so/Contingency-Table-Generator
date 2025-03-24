@@ -115,6 +115,12 @@ min_x=(int(min_x//(nearest_mag(invlwidth_x))) - 1)*nearest_mag(invlwidth_x)
 max_y=(int(max_y//(nearest_mag(invlwidth_y))) + 1)*nearest_mag(invlwidth_y)
 min_y=(int(min_y//(nearest_mag(invlwidth_y))) - 1)*nearest_mag(invlwidth_y)
 
+if all(datapts["x"]>=0) and min_x<0:
+    min_x=0
+
+if all(datapts["x"]>=0) and min_y<0:
+    min_y=0
+
 invlwidth_x=(max_x-min_x)/x_bins
 invlwidth_y=(max_y-min_y)/y_bins
 
@@ -131,14 +137,24 @@ for i in range(len(bds_x[:-1])):
 for i in range(len(bds_y[:-1])):
     subinvls_y.append(f"[{try_int(bds_y[i])},{try_int(bds_y[i+1])})")
 
+subinvls_x[-1]=subinvls_x[-1][:-1]+"]"
+subinvls_y[-1]=subinvls_y[-1][:-1]+"]"
+
 matrix=np.zeros((x_bins,y_bins))
 data=datapts.to_numpy()
+
 for pt in data:
     for i in range(x_bins):
         for j in range(y_bins):
-            if (bds_x[i]<=pt[0]) and (pt[0]<bds_x[i+1]) and ((bds_y[j]<=pt[1])) and (pt[1]<bds_y[j+1]):
-                matrix[i][j]+=1
-                break
+            if i<x_bins-1 and j<y_bins-1:
+                if (bds_x[i]<=pt[0]) and (pt[0]<bds_x[i+1]) and ((bds_y[j]<=pt[1])) and (pt[1]<bds_y[j+1]):
+                    matrix[i][j]+=1
+                    break
+            else:
+                if (bds_x[i]<=pt[0]) and (pt[0]<=bds_x[i+1]) and ((bds_y[j]<=pt[1])) and (pt[1]<=bds_y[j+1]):
+                    matrix[i][j]+=1
+                    break
+    
 
 df=pd.DataFrame(matrix,columns=subinvls_y) #,index=subinvls_x
 df=pd.concat([pd.Series(subinvls_x),df],axis=1)

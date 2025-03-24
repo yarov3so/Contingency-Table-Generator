@@ -166,6 +166,22 @@ st.markdown("##### Contingency table: ")
 
 st.dataframe(df,hide_index=True)
 
+corr = datapts['x'].corr(datapts['y'])
+if corr>=0.6:
+    st.markdown(f"The correlation is positive and strong: &nbsp; {${corr}$}")
+if corr<0.6 and corr>0.4:
+    st.markdown(f"The correlation is positive and moderate: &nbsp; {${corr}$}")
+if corr<=0.4 and corr>0.1:
+    st.markdown(f"The correlation is positive and weak: &nbsp; {${corr}$}")
+if corr<=0.1 and corr>=-0.1:
+    st.markdown(f"There is effectively zero: &nbsp; {${corr}$}")
+if corr=>-0.4 and corr<-0.1:
+    st.markdown(f"The correlation is negative and weak: &nbsp; {${corr}$}")
+if corr>-0.6 and corr<-0.4:
+    st.markdown(f"The correlation is negative and moderate: &nbsp; {${corr}$}")
+if corr<=-0.6:
+    st.markdown(f"The correlation is negative and strong: &nbsp; {${corr}$}")
+
 st.text("")
 st.markdown("""*Crafted by yarov3so*   
 <a href="https://www.buymeacoffee.com/yarov3so" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 9em; height: auto; padding-top: 0.7em; padding-bottom: 1em" ></a>  

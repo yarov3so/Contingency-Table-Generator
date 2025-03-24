@@ -173,6 +173,8 @@ try:
         corr="\approx"+str(try_int(corr))
     else:
         corr=try_int(corr)
+except:
+    corr=try_int(corr)
         
 if corr>=0.6:
     st.markdown(f"The correlation is positive and strong: &nbsp; ${corr}$")

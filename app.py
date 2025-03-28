@@ -76,7 +76,7 @@ x_bins = st.number_input(
 )
 
 y_bins = st.number_input(
-    "Select the number of subintervals for the y-variable (recommended value: 5 ) :",
+    "Select the number of subintervals for the y-variable (recommended value: 5 ):",
     min_value=1,
     max_value=100,
     value=5,

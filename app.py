@@ -137,9 +137,9 @@ subinvls_x=[]
 subinvls_y=[]
 
 for i in range(len(bds_x[:-1])):
-    subinvls_x.append(f"[{try_int(bds_x[i])},{try_int(bds_x[i+1])})")
+    subinvls_x.append(f"[{try_int(bds_x[i])}, {try_int(bds_x[i+1])}[")
 for i in range(len(bds_y[:-1])):
-    subinvls_y.append(f"[{try_int(bds_y[i])},{try_int(bds_y[i+1])})")
+    subinvls_y.append(f"[{try_int(bds_y[i])}, {try_int(bds_y[i+1])}[")
 
 subinvls_x[-1]=subinvls_x[-1][:-1]+"]"
 subinvls_y[-1]=subinvls_y[-1][:-1]+"]"

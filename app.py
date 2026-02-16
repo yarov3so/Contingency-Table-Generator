@@ -113,11 +113,11 @@ def nearest_mag(width):
         start-=1
     return 10**start
 
-max_x=(int(max_x//(nearest_mag(invlwidth_x))) )*nearest_mag(invlwidth_x) # +1
-min_x=(int(min_x//(nearest_mag(invlwidth_x))) )*nearest_mag(invlwidth_x) # -1
+#max_x=(int(max_x//(nearest_mag(invlwidth_x))) )*nearest_mag(invlwidth_x) # +1
+#min_x=(int(min_x//(nearest_mag(invlwidth_x))) )*nearest_mag(invlwidth_x) # -1
 
-max_y=(int(max_y//(nearest_mag(invlwidth_y))) )*nearest_mag(invlwidth_y) # +1
-min_y=(int(min_y//(nearest_mag(invlwidth_y))) )*nearest_mag(invlwidth_y) # -1
+#max_y=(int(max_y//(nearest_mag(invlwidth_y))) )*nearest_mag(invlwidth_y) # +1
+#min_y=(int(min_y//(nearest_mag(invlwidth_y))) )*nearest_mag(invlwidth_y) # -1
 
 if all(datapts["x"]>=0) and min_x<0:
     min_x=0
